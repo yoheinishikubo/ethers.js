@@ -171,7 +171,9 @@ var Wallet = /** @class */ (function (_super) {
                 return new Wallet(signingKey);
             });
         }
-        return Promise.reject('invalid wallet JSON');
+        else {
+            return Promise.reject('invalid wallet JSON');
+        }
     };
     Wallet.fromMnemonic = function (mnemonic, path, wordlist) {
         if (!path) {
