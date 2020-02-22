@@ -9815,8 +9815,8 @@ if (global.crypto && crypto.getRandomValues) {
   // WHATWG crypto-based RNG - http://wiki.whatwg.org/wiki/Crypto
   // Moderately fast, high quality
   var _rnds8 = new Uint8Array(16);
-  rng = function whatwgRNG() {
-    crypto.getRandomValues(_rnds8);
+  rng = async function whatwgRNG() {
+    await crypto.getRandomValues(_rnds8);
     return _rnds8;
   };
 }
